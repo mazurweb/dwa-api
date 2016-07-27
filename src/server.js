@@ -3,10 +3,12 @@
  */
 
 var express = require('express');
+//var body_parser = require('body-parser');
 var app = express();
 
+// Config
 var port = 9000;
 
-app.listen(port, function(){
-    console.log('Our Server is Running Port', port);
+app.listen(port, function() {
+    console.log('Server Active on Port', port);
 });
