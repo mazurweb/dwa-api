@@ -3,14 +3,15 @@
  */
 
 var express = require('express');
-//var body_parser = require('body-parser');
+var body_parser = require('body-parser');
 var app = express();
 
 // Config
 var port = 9000;
 
-app.get('/api', require('./routes/api.js')(express));
+app.use(body_parser.json());
+app.use('/api', require('../routes/api.js')(express));
 
-app.listen(port, function() {
-    console.log('Server Active on Port', port);
-});
+var server = app.listen(port);
+
+module.exports = server;

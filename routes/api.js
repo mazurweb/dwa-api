@@ -4,7 +4,7 @@
 module.exports = function(express) {
     var router = express.Router();
 
-    router.get('/', function(req, res){
+    router.get('/v1', function(req, res){
         res.json({hello: 'world'});
     });
 
